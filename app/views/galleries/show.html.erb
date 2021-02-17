@@ -1,0 +1,22 @@
+<%= link_to 'Top page', root_path %>
+
+<% if user_signed_in? && current_user.id == @gallery.user_id %>
+  <h3>
+    <%= link_to 'Edit', edit_gallery_path(@gallery.id) %>
+    <%= link_to 'Delete', gallery_path(@gallery.id), method: :delete %>
+  </h3>
+<% end %>
+
+<h2><%= @gallery.title %></h2>
+<% if @gallery.top_image.attached? %>
+  <div>
+    <%= image_tag @gallery.top_image %>
+  </div>
+<% else %>
+  <div>
+    <%= image_tag 'no_image.png' %>
+  </div>
+<% end %>
+<div><%= @gallery.description %></div>
+
+<h2><%= link_to '-Enter-', '#' %></h2>
