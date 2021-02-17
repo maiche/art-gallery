@@ -1,0 +1,15 @@
+<%= link_to 'Top page', root_path %>
+
+<h2><%= @gallery.title %></h2>
+<% if @gallery.top_image.attached? %>
+  <div>
+    <%= image_tag @gallery.top_image %>
+  </div>
+<% else %>
+  <div>
+    <%= image_tag 'no_image.png' %>
+  </div>
+<% end %>
+<div><%= @gallery.description %></div>
+
+<h2>-Enter-</h2>

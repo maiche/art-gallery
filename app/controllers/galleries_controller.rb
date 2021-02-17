@@ -16,6 +16,10 @@ class GalleriesController < ApplicationController
     end
   end
 
+  def show
+    @gallery = Gallery.find(params[:id])
+  end
+
   private
 
   def gallery_params

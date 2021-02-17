@@ -1,4 +1,4 @@
-<div>
+<%= link_to gallery_path(gallery.id) do %>
   <div>
     <%= gallery.title %>
   </div>
@@ -11,4 +11,4 @@
       <%= image_tag 'no_image.png' %>
     </div>
   <% end %>
-</div>
+<% end %>
