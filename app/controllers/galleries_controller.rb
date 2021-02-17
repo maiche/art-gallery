@@ -3,6 +3,7 @@ class GalleriesController < ApplicationController
   end
 
   def new
+    @gallery = Gallery.new
   end
 
   def create
