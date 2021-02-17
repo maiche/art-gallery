@@ -1,6 +1,6 @@
 class Gallery < ApplicationRecord
   with_options presence: true do
-    validates :title, :description
+    validates :title, :description, :artworks
   end
   
   belongs_to :user
