@@ -8,3 +8,9 @@
 <% end %>
 
 <h2>Art Gallery Top page</h2>
+
+<h3>Exhibitions</h3>
+
+<% if @galleries.any? %>
+  <%= render partial: 'gallery', collection: @galleries %>
+<% end %>

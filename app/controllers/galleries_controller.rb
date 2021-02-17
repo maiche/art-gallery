@@ -1,5 +1,6 @@
 class GalleriesController < ApplicationController
   def index
+    @galleries = Gallery.all.order('created_at DESC')
   end
 
   def new

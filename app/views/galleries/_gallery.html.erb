@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <%= gallery.title %>
+  </div>
+  <% if gallery.top_image.attached? %>
+    <div>
+      <%= image_tag gallery.top_image %>
+    </div>
+  <% else %>
+    <div>
+      <%= image_tag 'no_image.png' %>
+    </div>
+  <% end %>
+</div>
