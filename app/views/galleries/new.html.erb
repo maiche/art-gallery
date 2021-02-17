@@ -9,8 +9,9 @@
   </div>
   <div>
     <%= f.label :top_image %><br />
-    <%= f.file_field :top_image %>
+    <%= f.file_field :top_image, id: 'gallery_top_image' %>
   </div>
+  <div id="top_image_preview"></div>
   <div>
     <%= f.label :description %><br />
     <%= f.text_area :description %>
@@ -19,6 +20,7 @@
     <%= f.label :artworks %><br />
     <%= f.file_field :artworks, name: 'gallery[artworks][]', id: 'gallery_artwork' %>
   </div>
+  <div id="artworks_preview"></div>
   <div>
     <%= f.submit "Submit" %>
   </div>
