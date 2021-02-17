@@ -1,4 +1,4 @@
-if (document.URL.match( /new/ )) {
+// if (document.URL.match( /new/ )) {
   document.addEventListener('DOMContentLoaded', function(){
     const TopImagePreview = document.getElementById('top_image_preview');
     const ArtworksPreview = document.getElementById('artworks_preview');
@@ -16,16 +16,35 @@ if (document.URL.match( /new/ )) {
       TopImagePreview.appendChild(TopImageImg);
     });
     document.getElementById('gallery_artwork').addEventListener('change', function(e){
-      const ArtworkContent = document.getElementById('artwork');
-      if (ArtworkContent){
-        ArtworkContent.remove();
+
+      const createImageHTML = (blob) => {
+        const ArtworkDiv = document.createElement('div');
+        const ArtworkImg = document.createElement('img');
+        ArtworkImg.setAttribute('src', blob);
+        ArtworkImg.setAttribute('id', 'artwork');
+        ArtworkDiv.setAttribute('class', 'artwork_element');
+        ArtworkDiv.appendChild(ArtworkImg);
+        ArtworksPreview.appendChild(ArtworkDiv);
+        
+        const inputHTML = document.createElement('input')
+        let ArtworkElementNum = document.querySelectorAll('.artwork_element').length
+        inputHTML.setAttribute('id', `gallery_artwork_${ArtworkElementNum}`)
+        inputHTML.setAttribute('name', 'gallery[artworks][]')
+        inputHTML.setAttribute('type', 'file')
+        ArtworkDiv.appendChild(inputHTML);
+
+        inputHTML.addEventListener('change', (e) => {
+          file = e.target.files[0];
+          blob = window.URL.createObjectURL(file);
+  
+          createImageHTML(blob)
+        })
       }
+
       const ArtworkFile = e.target.files[0];
       const ArtworkBlob = window.URL.createObjectURL(ArtworkFile);
-      const ArtworkImg = document.createElement('img');
-      ArtworkImg.setAttribute('src', ArtworkBlob);
-      ArtworkImg.setAttribute('id', 'artwork');
-      ArtworksPreview.appendChild(ArtworkImg);
+      createImageHTML(ArtworkBlob);
+
     });
   });
-}
+// }
