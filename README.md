@@ -14,10 +14,11 @@
 
 ## galleries テーブル
 
-| Column      | Type   | Options     |
-| ----------- | ------ | ----------- |
-| title       | string | null: false |
-| description | text   | null: false |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| title       | string     | null: false                    |
+| description | text       | null: false                    |
+| user        | references | null: false, foreign_key: true |
 
 ### Association
 
