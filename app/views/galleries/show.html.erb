@@ -1,5 +1,9 @@
 <%= link_to 'Top page', root_path %>
 
+<% if @gallery.user_id == current_user.id %>
+  <h3><%= link_to 'Edit', edit_gallery_path(@gallery.id) %></h3>
+<% end %>
+
 <h2><%= @gallery.title %></h2>
 <% if @gallery.top_image.attached? %>
   <div>
@@ -12,4 +16,4 @@
 <% end %>
 <div><%= @gallery.description %></div>
 
-<h2>-Enter-</h2>
+<h2><%= link_to '-Enter-', '#' %></h2>

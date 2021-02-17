@@ -1,0 +1,27 @@
+<%= link_to 'Top page', root_path %>
+
+<h2>Edit gallery</h2>
+
+<%= form_with(model: @gallery, local: true) do |f| %>
+  <div>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :top_image %><br />
+    <%= f.file_field :top_image, id: 'gallery_top_image' %>
+  </div>
+  <div id="top_image_preview"></div>
+  <div>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div>
+    <%= f.label :artworks %><br />
+    <%= f.file_field :artworks, name: 'gallery[artworks][]', id: 'gallery_artwork' %>
+  </div>
+  <div id="artworks_preview"></div>
+  <div>
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
