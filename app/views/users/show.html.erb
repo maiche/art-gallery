@@ -1,0 +1,6 @@
+<%= link_to 'Top page', root_path %>
+
+<h2><%= @user.name %></h2>
+<h3>Profile</h3>
+<h3>Exhibitions</h3>
+<%= render partial: '/galleries/gallery', collection: @galleries %>
