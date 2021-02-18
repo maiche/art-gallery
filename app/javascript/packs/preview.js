@@ -29,7 +29,7 @@
         const inputHTML = document.createElement('input')
         let ArtworkElementNum = document.querySelectorAll('.artwork_element').length
         inputHTML.setAttribute('id', `gallery_artwork_${ArtworkElementNum}`)
-        inputHTML.setAttribute('name', 'gallery[artworks][]')
+        inputHTML.setAttribute('name', 'gallery_room[artworks][]')
         inputHTML.setAttribute('type', 'file')
         ArtworkDiv.appendChild(inputHTML);
 

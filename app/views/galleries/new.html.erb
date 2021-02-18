@@ -2,7 +2,7 @@
 
 <h2>New gallery</h2>
 
-<%= form_with(model: @gallery, local: true) do |f| %>
+<%= form_with(model: @gallery_room, url: galleries_path, local: true) do |f| %>
   <div>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -18,7 +18,7 @@
   </div>
   <div>
     <%= f.label :artworks %><br />
-    <%= f.file_field :artworks, name: 'gallery[artworks][]', id: 'gallery_artwork' %>
+    <%= f.file_field :artworks, name: 'gallery_room[artworks][]', id: 'gallery_artwork' %>
   </div>
   <div id="artworks_preview"></div>
   <div>

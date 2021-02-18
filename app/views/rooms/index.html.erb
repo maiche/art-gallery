@@ -1,0 +1,6 @@
+<%= link_to 'Back', gallery_path(@gallery.id) %>
+
+<h2><%= @gallery.title %></h2>
+<h3>Exhibition room</h3>
+
+<%= render partial: 'artwork', collection: @artworks %>
