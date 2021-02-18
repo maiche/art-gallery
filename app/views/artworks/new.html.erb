@@ -1,0 +1,15 @@
+<h2>New artwork</h2>
+
+<%= form_with(model: @artwork, url: gallery_room_artworks_path(@gallery.id, @room.id),local: true) do |f| %>
+  <div>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+  </div>
+  <div>
+    <%= f.label :caption %><br />
+    <%= f.text_area :caption %>
+  </div>
+  <div>
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

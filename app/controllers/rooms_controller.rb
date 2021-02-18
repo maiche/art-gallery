@@ -10,5 +10,6 @@ class RoomsController < ApplicationController
   def edit
     @gallery = Gallery.find(params[:gallery_id])
     redirect_to root_path if current_user.id != @gallery.user_id
+    @room = Room.find(params[:id])
   end
 end
