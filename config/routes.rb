@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :galleries do
     resources :rooms, only: :index
   end
+  resources :users, only: :show
 end
