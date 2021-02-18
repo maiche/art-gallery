@@ -23,7 +23,7 @@
 ### Association
 
 - belongs_to :user
-- has_one :room
+- has_many :rooms
 
 ## rooms テーブル
 
@@ -34,3 +34,14 @@
 ### Association
 
 - belongs_to :gallery
+- has_many :artworks
+
+## artworks テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| vertical    | integer    | null: false                    |
+| horizontal  | integer    | null: false                    |
+| room        | references | null: false, foreign_key: true |
+
+- belongs_to :room
