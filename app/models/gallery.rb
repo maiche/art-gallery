@@ -6,4 +6,5 @@ class Gallery < ApplicationRecord
   belongs_to :user
   has_one_attached :top_image
   has_many_attached :artworks
+  has_one :room
 end

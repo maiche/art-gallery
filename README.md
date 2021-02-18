@@ -23,3 +23,14 @@
 ### Association
 
 - belongs_to :user
+- has_one :room
+
+## rooms テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| gallery     | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :gallery
