@@ -40,8 +40,9 @@
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
-| vertical    | integer    | null: false                    |
-| horizontal  | integer    | null: false                    |
+| caption     | text       | null: false                    |
+| vertical    | integer    |                                |
+| horizontal  | integer    |                                |
 | room        | references | null: false, foreign_key: true |
 
 - belongs_to :room
