@@ -12,7 +12,7 @@ class GalleriesController < ApplicationController
   end
 
   def create
-    @gallery_room = GalleryRoom.new(gallery_params)
+    @gallery_room = GalleryRoom.new(gallery_room_params)
     if @gallery_room.valid?
       @gallery_room.save
       redirect_to root_path
@@ -42,8 +42,12 @@ class GalleriesController < ApplicationController
 
   private
 
-  def gallery_params
+  def gallery_room_params
     params.require(:gallery_room).permit(:title, :top_image, :description, artworks: []).merge(user_id: current_user.id)
+  end
+
+  def gallery_params
+    params.require(:gallery).permit(:title, :top_image, :description).merge(user_id: current_user.id)
   end
 
   def set_gallery

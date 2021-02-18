@@ -17,11 +17,6 @@
     <%= f.text_area :description %>
   </div>
   <div>
-    <%= f.label :artworks %><br />
-    <%= f.file_field :artworks, name: 'gallery[artworks][]', id: 'gallery_artwork' %>
-  </div>
-  <div id="artworks_preview"></div>
-  <div>
     <%= f.submit "Submit" %>
   </div>
 <% end %>
