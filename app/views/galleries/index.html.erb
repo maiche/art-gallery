@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <%= link_to current_user.name, user_path(current_user.id) %>
   <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-  <%= link_to 'Create new gallery', new_gallery_path %>
+  <%= link_to 'New gallery', new_gallery_path %>
 <% else %>
   <%= link_to 'Log in', new_user_session_path %>
   <%= link_to 'Sign up', new_user_registration_path %>
