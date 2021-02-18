@@ -1,0 +1,10 @@
+<%= link_to 'Back', edit_gallery_path(@gallery.id) %>
+
+<h2>Edit room</h2>
+
+<h3>Artworks</h3>
+<%= render partial: 'artwork', collection: @artworks %>
+
+<div>
+  <%= link_to 'Add new artworks', new_gallery_room_artwork_path(@gallery.id, @room.id) %>
+</div>
