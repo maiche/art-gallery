@@ -3,8 +3,9 @@
 <%= form_with(model: @artwork, url: gallery_room_artworks_path(@gallery.id, @room.id),local: true) do |f| %>
   <div>
     <%= f.label :image %><br />
-    <%= f.file_field :image %>
+    <%= f.file_field :image, id: 'preview_form' %>
   </div>
+  <div id="preview_display"></div>
   <div>
     <%= f.label :caption %><br />
     <%= f.text_area :caption %>
