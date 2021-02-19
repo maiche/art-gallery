@@ -1,5 +1,6 @@
 class ArtworksController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_gallery_room, :move_to_root
 
   def new
     @artwork = Artwork.new
@@ -37,5 +38,14 @@ class ArtworksController < ApplicationController
 
   def artwork_params
     params.require(:artwork).permit(:image, :caption).merge(room_id: params[:room_id])
+  end
+
+  def set_gallery_room
+    @gallery = Gallery.find(params[:gallery_id])
+    @room = Room.find(params[:room_id])
+  end
+
+  def move_to_root
+    redirect_to root_path if current_user.id != @gallery.user_id
   end
 end

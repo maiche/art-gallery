@@ -15,13 +15,14 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.new(gallery_params)
     if @gallery.save
       Room.create(gallery_id: @gallery.id)
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render :new
     end
   end
 
   def edit
+    @room = @gallery.rooms[0]
   end
 
   def update
