@@ -4,17 +4,9 @@ img {
   object-fit: contain;
 }
 
-.exhibition_room_area {
-  height: 600px;
-  display: flex;
-  justify-content: center;
-}
-
 .exhibition_room {
   background-color: azure;
-  height: 100%;
-  width: 90%;
-  margin: 0, auto;
+  height: 600px;
   border: lightgray solid 1px;
   position: relative;
 }
