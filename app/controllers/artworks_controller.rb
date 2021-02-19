@@ -27,6 +27,12 @@ class ArtworksController < ApplicationController
     end
   end
 
+  def destroy
+    @artwork = Artwork.find(params[:id])
+    @artwork.destroy
+    redirect_to edit_gallery_room_path(params[:gallery_id], params[:room_id])
+  end
+
   private
 
   def artwork_params

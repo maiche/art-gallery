@@ -1,4 +1,5 @@
 <%= image_tag artwork.image %>
 <% if current_user.id == @gallery.user_id %>
-  <%= link_to 'Edit', edit_gallery_room_artwork_path(@gallery.id,@room.id,artwork.id) %>
+  <%= link_to 'Edit', edit_gallery_room_artwork_path(@gallery.id, @room.id, artwork.id) %>
+  <%= link_to 'Delete', gallery_room_artwork_path(@gallery.id, @room.id, artwork.id), method: :delete %>
 <% end %>

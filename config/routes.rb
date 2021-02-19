@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'galleries#index'
   resources :galleries do
     resources :rooms, only: [:index, :edit] do
-      resources :artworks, only: [:new, :create, :edit, :update]
+      resources :artworks, only: [:new, :create, :edit, :update, :destroy]
     end
   end
   resources :users, only: :show
