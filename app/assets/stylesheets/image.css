@@ -3,3 +3,25 @@ img {
   width: 100px;
   object-fit: contain;
 }
+
+.exhibition_room_area {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.exhibition_room {
+  background-color: azure;
+  height: 100%;
+  width: 90%;
+  margin: 0, auto;
+  border: lightgray solid 1px;
+  position: relative;
+}
+
+.artwork {
+  height: 180px;
+  width: 180px;
+  object-fit: contain;
+  position: absolute;
+}
