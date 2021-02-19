@@ -2,20 +2,35 @@ class ArtworksController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @gallery = Gallery.find(params[:gallery_id])
-    @room = Room.find(params[:room_id])
     @artwork = Artwork.new
   end
 
   def create
-    @gallery = Gallery.find(params[:gallery_id])
-    @room = Room.find(params[:room_id])
     @artwork = Artwork.new(artwork_params)
     if @artwork.save
-      redirect_to edit_gallery_room_path(@gallery.id, @room.id)
+      redirect_to edit_gallery_room_path(params[:gallery_id], params[:room_id])
     else
       render :new
     end
+  end
+
+  def edit
+    @artwork = Artwork.find(params[:id])
+  end
+
+  def update
+    @artwork = Artwork.find(params[:id])
+    if @artwork.update(artwork_params)
+      redirect_to edit_gallery_room_path(params[:gallery_id], params[:room_id])
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @artwork = Artwork.find(params[:id])
+    @artwork.destroy
+    redirect_to edit_gallery_room_path(params[:gallery_id], params[:room_id])
   end
 
   private
