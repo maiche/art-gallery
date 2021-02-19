@@ -5,7 +5,7 @@ img {
 }
 
 .exhibition_room_area {
-  height: 500px;
+  height: 600px;
   display: flex;
   justify-content: center;
 }
@@ -19,9 +19,12 @@ img {
   position: relative;
 }
 
+.artwork_container {
+  position: absolute;
+}
+
 .artwork {
   height: 180px;
   width: 180px;
   object-fit: contain;
-  position: absolute;
 }
