@@ -1,8 +1,8 @@
 <%= link_to 'Back', edit_gallery_room_path(params[:gallery_id],params[:room_id]) %>
 
-<h2>New artwork</h2>
+<h2>Edit artwork</h2>
 
-<%= form_with(model: @artwork, url: gallery_room_artworks_path(params[:gallery_id], params[:room_id]),local: true) do |f| %>
+<%= form_with(model: @artwork, url: gallery_room_artwork_path(params[:gallery_id], params[:room_id]),local: true) do |f| %>
   <div>
     <%= f.label :image %><br />
     <%= f.file_field :image, id: 'preview_form' %>
