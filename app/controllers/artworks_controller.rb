@@ -37,7 +37,7 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:image, :caption).merge(room_id: params[:room_id])
+    params.require(:artwork).permit(:image, :caption, :vertical, :horizontal).merge(room_id: params[:room_id])
   end
 
   def set_gallery_room
