@@ -3,8 +3,13 @@
 <h2>Edit room</h2>
 
 <h3>Artworks</h3>
-<%= render partial: 'artwork', collection: @artworks %>
+<%= render partial: 'artwork_list', collection: @artworks %>
 
 <div>
   <%= link_to 'Add new artworks', new_gallery_room_artwork_path(@gallery.id, @room.id) %>
+</div>
+
+<h3>Room preview</h3>
+<div class="exhibition_room">
+  <%= render partial: 'artwork', collection: @artworks %>
 </div>
