@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function(){
   const ExhibitionRoom = document.querySelector(".exhibition_room");
   const artworks = document.querySelectorAll(".artwork_container");
+  const Data = document.getElementById("data");
+  const galleryId = Data.getAttribute('data-gallery');
+  const roomId = Data.getAttribute('data-room');
   artworks.forEach(function (artwork) {
     artwork.addEventListener('dragstart',(e) => {
       e.preventDefault();
@@ -40,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function(){
       formData.set('vertical', artworkVertical);
       formData.set('horizontal', artworkHorizontal);
       const XHR = new XMLHttpRequest();
-      XHR.open("PUT", `/galleries/1/rooms/1`, true);
+      XHR.open("PUT", `/galleries/${galleryId}/rooms/${roomId}`, true);
       XHR.responseType = "json";
       XHR.send(formData);
       XHR.onload = () => {
