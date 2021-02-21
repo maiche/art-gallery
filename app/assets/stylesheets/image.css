@@ -20,3 +20,11 @@ img {
   width: 180px;
   object-fit: contain;
 }
+
+.save_message {
+  height: 30px;
+}
+
+.saved {
+  color: red;
+}

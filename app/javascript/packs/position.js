@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
   });
   const PositionBtn = document.getElementById('position_btn');
   PositionBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     artworks.forEach(function (artwork) {
       const artworkId = artwork.getAttribute('data-id');
       console.log(artworkId);
@@ -52,11 +53,16 @@ document.addEventListener('DOMContentLoaded', function(){
           return null;
         }
         const item = XHR.response.artwork;
-        console.log(artwork.style.top);
         artwork.style.top = item.vertical + "px"
         artwork.style.left = item.horizontal + "px"
       };
     });
-    e.preventDefault();
+    console.log(Data);
+    Data.classList.add('saved');
+    Data.textContent = 'saved';
+    setTimeout(function() {
+      Data.classList.remove('saved');
+      Data.textContent = '';
+    }, 500);
   });
 });
