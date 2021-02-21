@@ -23,4 +23,15 @@ document.addEventListener('DOMContentLoaded', function(){
       });
     }
   });
+  const PositionBtn = document.getElementById('position_btn');
+  PositionBtn.addEventListener('click', () => {
+    artworks.forEach(function (artwork) {
+      let artworkId = artwork.getAttribute('data-id');
+      console.log(artworkId);
+      let artworkVertical = parseInt(artwork.style.top);
+      let artworkHorizontal = parseInt(artwork.style.left);
+      console.log(artworkVertical);
+      console.log(artworkHorizontal);
+    });
+  });
 });
