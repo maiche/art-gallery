@@ -10,6 +10,13 @@
 </div>
 
 <h3>Room preview</h3>
+
+<%= form_with url: gallery_room_path(@gallery.id, @room.id), method: :put, id: "form" do |form| %>
+  <%= form.submit 'done' , id: "position_btn" %>
+<% end %>
+
+<div id="data" data-gallery="<%= @gallery.id %>" data-room="<%= @room.id %>"></div>
+
 <div class="exhibition_room">
   <%= render partial: 'artwork', collection: @artworks %>
 </div>
