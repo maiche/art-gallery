@@ -24,14 +24,36 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   });
   const PositionBtn = document.getElementById('position_btn');
-  PositionBtn.addEventListener('click', () => {
+  PositionBtn.addEventListener('click', (e) => {
     artworks.forEach(function (artwork) {
-      let artworkId = artwork.getAttribute('data-id');
+      const artworkId = artwork.getAttribute('data-id');
       console.log(artworkId);
-      let artworkVertical = parseInt(artwork.style.top);
-      let artworkHorizontal = parseInt(artwork.style.left);
+      const artworkVertical = parseInt(artwork.style.top);
+      const artworkHorizontal = parseInt(artwork.style.left);
       console.log(artworkVertical);
       console.log(artworkHorizontal);
+      const formData = new FormData(document.getElementById("form"));
+      for (let value of formData.entries()) { 
+        console.log(value); 
+      }
+      formData.set('artwork_id', artworkId);
+      formData.set('vertical', artworkVertical);
+      formData.set('horizontal', artworkHorizontal);
+      const XHR = new XMLHttpRequest();
+      XHR.open("PUT", `/galleries/1/rooms/1`, true);
+      XHR.responseType = "json";
+      XHR.send(formData);
+      XHR.onload = () => {
+        if (XHR.status != 200) {
+          alert(`Error ${XHR.status}: ${XHR.statusText}`);
+          return null;
+        }
+        const item = XHR.response.artwork;
+        console.log(artwork.style.top);
+        artwork.style.top = item.vertical + "px"
+        artwork.style.left = item.horizontal + "px"
+      };
     });
+    e.preventDefault();
   });
 });

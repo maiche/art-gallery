@@ -13,4 +13,10 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @artworks = @room.artworks
   end
+
+  def update
+    artwork = Artwork.find(params[:artwork_id])
+    artwork.update(vertical: params[:vertical], horizontal: params[:horizontal])
+    render json:{ artwork: artwork }
+  end
 end

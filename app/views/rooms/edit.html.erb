@@ -11,7 +11,9 @@
 
 <h3>Room preview</h3>
 
-<div style="border: black solid 1px; width: 40px;" id="position_btn">done</div>
+<%= form_with url: gallery_room_path(@gallery.id, @room.id), method: :put, id: "form" do |form| %>
+  <%= form.submit 'done' , id: "position_btn" %>
+<% end %>
 
 <div class="exhibition_room">
   <%= render partial: 'artwork', collection: @artworks %>
