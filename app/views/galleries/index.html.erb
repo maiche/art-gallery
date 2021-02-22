@@ -7,10 +7,12 @@
   <%= link_to 'Sign up', new_user_registration_path %>
 <% end %>
 
-<h2>Art Gallery Top page</h2>
+<div>Art Gallery Top page</div>
 
-<h3>Exhibitions</h3>
+<div>Exhibitions</div>
 
 <% if @galleries.any? %>
-  <%= render partial: 'gallery', collection: @galleries %>
+  <div class="show_exhibitions">
+    <%= render partial: 'gallery', collection: @galleries %>
+  </div>
 <% end %>
