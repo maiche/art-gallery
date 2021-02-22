@@ -1,14 +1,13 @@
 .navbar {
   height: 70px;
   width: 100%;
-  background-color: #000000;
-  color: #E6D8B3;
+  color: #000000;
   display: flex;
   justify-content: space-between;
+  border-bottom: lightgray solid 1px;
 }
 
 .nav_title {	
-  color: #E6D8B3;
   font-size: 30px;
   font-family: 'Vollkorn', serif;
   padding: 25px 30px;
