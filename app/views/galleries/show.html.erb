@@ -1,4 +1,6 @@
-<%= link_to 'Top page', root_path %>
+<%= render partial: 'shared/header' %>
+
+<%= link_to 'Back', root_path %>
 
 <% if user_signed_in? && current_user.id == @gallery.user_id %>
   <h3>

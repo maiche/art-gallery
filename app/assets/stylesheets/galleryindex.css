@@ -1,0 +1,12 @@
+.top_area {
+  background-color: #494949;
+  /* background: linear-gradient(-45deg, #E4A972, #9941D8); */
+  padding: 50px 30px 120px;
+}
+
+.top_title {
+  color: #FFFFFF;
+  font-size: 80px;
+  font-family: 'Vollkorn', serif;
+  font-style: italic;
+}
