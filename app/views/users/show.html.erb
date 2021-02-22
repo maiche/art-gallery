@@ -1,15 +1,4 @@
-<div class="navbar">
-  <div class="nav_left">
-    <div class="nav_title link_parent">
-      Art Gallery
-      <%= link_to '', root_path, class:"link_child" %>
-    </div>
-  </div>
-  <div class="nav_right">
-    <div class="nav_menu link_parent">+ New gallery<%= link_to '', new_gallery_path, class:"link_child" %></div>
-    <div class="nav_menu link_parent">Sign out<%= link_to '', destroy_user_session_path, method: :delete, class:"link_child" %></div>
-  </div>
-</div>
+<%= render partial: 'shared/header' %>
 
 <h2><%= @user.name %></h2>
 <h3>Profile</h3>

@@ -1,14 +1,4 @@
-<div class="navbar">
-  <div class="nav_left">
-    <div class="nav_title link_parent">
-      Art Gallery
-      <%= link_to '', root_path, class:"link_child" %>
-    </div>
-  </div>
-  <div class="nav_right">
-    <div class="nav_menu link_parent">Log in<%= link_to '', new_user_session_path, class:"link_child" %></div>
-  </div>
-</div>
+<%= render partial: 'shared/header' %>
 
 <h2>Sign up</h2>
 

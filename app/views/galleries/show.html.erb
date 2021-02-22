@@ -1,21 +1,4 @@
-<div class="navbar">
-  <div class="nav_left">
-    <div class="nav_title link_parent">
-      Art Gallery
-      <%= link_to '', root_path, class:"link_child" %>
-    </div>
-  </div>
-  <div class="nav_right">
-    <% if user_signed_in? %>
-      <div class="nav_menu link_parent">+ New gallery<%= link_to '', new_gallery_path, class:"link_child" %></div>
-      <div class="nav_menu link_parent"><%= current_user.name %><%= link_to '', user_path(current_user.id), class:"link_child" %></div>
-      <div class="nav_menu link_parent">Sign out<%= link_to '', destroy_user_session_path, method: :delete, class:"link_child" %></div>
-    <% else %>
-      <div class="nav_menu link_parent">Log in<%= link_to '', new_user_session_path, class:"link_child" %></div>
-      <div class="nav_menu link_parent">Sign up<%= link_to '', new_user_registration_path, class:"link_child" %></div>
-    <% end %>
-  </div>
-</div>
+<%= render partial: 'shared/header' %>
 
 <%= link_to 'Back', root_path %>
 
