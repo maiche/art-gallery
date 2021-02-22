@@ -1,0 +1,41 @@
+.navbar {
+  height: 70px;
+  width: 100%;
+  background-color: #000000;
+  color: #E6D8B3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_title {	
+  color: #E6D8B3;
+  font-size: 30px;
+  font-family: 'Vollkorn', serif;
+  padding: 25px 30px;
+}
+
+.link_parent {
+  position: relative;
+  /* z-index: 1 */
+}
+
+.link_child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* text-indent:-999px;
+  z-index: 2; */
+}
+
+.nav_right {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav_menu {
+  font-size: 18px;
+  margin-right: 15px;
+  padding: 30px 12px;
+}

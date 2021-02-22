@@ -1,15 +1,23 @@
-<% if user_signed_in? %>
-  <%= link_to current_user.name, user_path(current_user.id) %>
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-  <%= link_to 'New gallery', new_gallery_path %>
-<% else %>
-  <%= link_to 'Log in', new_user_session_path %>
-  <%= link_to 'Sign up', new_user_registration_path %>
-<% end %>
+<div class="navbar">
+  <div class="nav_left">
+    <div class="nav_title link_parent">
+      Art Gallery
+      <%= link_to '', root_path, class:"link_child" %>
+    </div>
+  </div>
+  <div class="nav_right">
+    <% if user_signed_in? %>
+      <div class="nav_menu link_parent">+ New gallery<%= link_to '', new_gallery_path, class:"link_child" %></div>
+      <div class="nav_menu link_parent"><%= current_user.name %><%= link_to '', user_path(current_user.id), class:"link_child" %></div>
+      <div class="nav_menu link_parent">Sign out<%= link_to '', destroy_user_session_path, method: :delete, class:"link_child" %></div>
+    <% else %>
+      <div class="nav_menu link_parent">Log in<%= link_to '', new_user_session_path, class:"link_child" %></div>
+      <div class="nav_menu link_parent">Sign up<%= link_to '', new_user_registration_path, class:"link_child" %></div>
+    <% end %>
+  </div>
+</div>
 
-<div>Art Gallery Top page</div>
-
-<div>Exhibitions</div>
+<div class="top">Exhibitions</div>
 
 <% if @galleries.any? %>
   <div class="show_exhibitions">
