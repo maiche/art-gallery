@@ -4,11 +4,6 @@ img {
   object-fit: contain;
 }
 
-.show_exhibitions {
-  display: flex;
-  overflow: scroll;
-}
-
 .edit_room_btn {
   width: 80px;
   margin: 20px;
@@ -32,7 +27,7 @@ img {
   background-color: #F5F5F5;
   display: flex;
   justify-content: center;
-  padding: 80px;
+  padding: 20px;
 }
 
 .exhibition_room {
@@ -55,6 +50,8 @@ img {
 
 .save_message {
   height: 30px;
+  padding-top: 40px;
+  padding-left: 10px;
 }
 
 .saved {
