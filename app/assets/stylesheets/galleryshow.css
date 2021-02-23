@@ -1,0 +1,46 @@
+.show_gallery_top {
+  display: flex;
+  justify-content: space-around;
+}
+
+.show_gallery_title {
+  font-size: 40px;
+  padding-bottom: 30px;
+}
+
+.show_gallery_edit_btns{
+  display: flex;
+}
+
+.show_gallery_image {
+  height: 300px;
+  width: 100%;
+  object-fit: contain;
+  background: linear-gradient(-10deg, #000000, #E4A972);
+}
+
+.show_gallery_description {
+  text-align: center;
+  font-size: 20px;
+  padding-top: 20px;
+}
+
+.edit_btn {
+  margin: 20px;
+  border: #696969 solid 1px;
+  padding: 6px 12px;
+}
+
+.enter_area {
+  display: flex;
+  justify-content: center;
+}
+
+.enter_btn {
+  width: 200px;
+  text-align: center;
+  font-size: 40px;
+  border: #696969 solid 1px;
+  padding: 8px;
+  margin-top: 50px;
+}

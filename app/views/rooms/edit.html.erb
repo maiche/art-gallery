@@ -1,24 +1,32 @@
 <%= render partial: 'shared/header' %>
 
-<%= link_to 'Back', gallery_path(@gallery.id) %>
-
-<h2>Edit room</h2>
-
-<h3>Artworks</h3>
-<%= render partial: 'artwork_list', collection: @artworks %>
-
-<div>
-  <%= link_to 'Add new artworks', new_gallery_room_artwork_path(@gallery.id, @room.id) %>
+<div class="back_btn link_parent">
+  ← Back
+  <%= link_to '', gallery_path(@gallery.id), class: "link_child" %>
 </div>
 
-<h3>Room preview</h3>
+<div class="edit_room_title">Edit room</div>
 
-<%= form_with url: gallery_room_path(@gallery.id, @room.id), method: :put, id: "form" do |form| %>
-  <%= form.submit 'done' , id: "position_btn" %>
-<% end %>
+<div class="edit_room_artworks">Artworks</div>
+<div class="artwork_list_area">
+  <%= render partial: 'artwork_list', collection: @artworks %>
+</div>
 
-<div id="data" data-gallery="<%= @gallery.id %>" data-room="<%= @room.id %>" class="save_message"></div>
+<div class="new_artwork_btn link_parent">
+  + Add new artworks<%= link_to '', new_gallery_room_artwork_path(@gallery.id, @room.id), class:"link_child" %>
+</div>
 
-<div class="exhibition_room">
-  <%= render partial: 'artwork', collection: @artworks %>
+<div class="edit_room_title">Room preview</div>
+
+<div class="save_area">
+  <%= form_with url: gallery_room_path(@gallery.id, @room.id), method: :put, id: "form" do |form| %>
+    <%= form.submit 'done' , id: "position_btn", class: "done_btn" %>
+  <% end %>
+  <div id="data" data-gallery="<%= @gallery.id %>" data-room="<%= @room.id %>" class="save_message"></div>
+</div>
+
+<div class="exhibition_room_back">
+  <div class="exhibition_room">
+    <%= render partial: 'artwork', collection: @artworks %>
+  </div>
 </div>

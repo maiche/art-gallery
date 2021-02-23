@@ -1,24 +1,31 @@
 <%= render partial: 'shared/header' %>
 
-<%= link_to 'Back', root_path %>
+<div class="back_btn link_parent">
+  ← Back
+  <%= link_to '', root_path, class: "link_child" %>
+</div>
 
-<% if user_signed_in? && current_user.id == @gallery.user_id %>
-  <h3>
-    <%= link_to 'Edit', edit_gallery_path(@gallery.id) %>
-    <%= link_to 'Delete', gallery_path(@gallery.id), method: :delete %>
-  </h3>
-<% end %>
+<div class="show_gallery_top">
+  <div class="show_gallery_title"><%= @gallery.title %></div>
+  <div class="show_gallery_edit_btns">
+    <% if user_signed_in? && current_user.id == @gallery.user_id %>
+      <div class="edit_btn link_parent">
+        Edit<%= link_to '', edit_gallery_path(@gallery.id), class: "link_child" %>
+      </div>
+      <div class="edit_btn link_parent">
+        Delete<%= link_to '', gallery_path(@gallery.id), method: :delete, class: "link_child" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<h2><%= @gallery.title %></h2>
 <% if @gallery.top_image.attached? %>
-  <div>
-    <%= image_tag @gallery.top_image %>
-  </div>
+  <%= image_tag @gallery.top_image, class: "show_gallery_image" %>
 <% else %>
-  <div>
-    <%= image_tag 'no_image.png' %>
-  </div>
+  <%= image_tag 'no_image.png', class: "show_gallery_image" %>
 <% end %>
-<div><%= @gallery.description %></div>
+<div class="show_gallery_description"><%= @gallery.description %></div>
 
-<h2><%= link_to '-Enter-', gallery_rooms_path(@gallery.id) %></h2>
+<div class="enter_area">
+  <div class="enter_btn link_parent">- Enter -<%= link_to '', gallery_rooms_path(@gallery.id), class: "link_child" %></div>
+</div>

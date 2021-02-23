@@ -1,5 +1,13 @@
-<%= image_tag artwork_list.image, class: "artwork_list" %>
-<% if user_signed_in? && current_user.id == @gallery.user_id %>
-  <%= link_to 'Edit', edit_gallery_room_artwork_path(@gallery.id, @room.id, artwork_list.id) %>
-  <%= link_to 'Delete', gallery_room_artwork_path(@gallery.id, @room.id, artwork_list.id), method: :delete %>
-<% end %>
+<div class="artwork_list_container">
+  <%= image_tag artwork_list.image, class: "artwork_list" %>
+  <div class="artwork_list_btns">
+    <% if user_signed_in? && current_user.id == @gallery.user_id %>
+      <div class="artwork_list_btn link_parent">
+        Edit<%= link_to '', edit_gallery_room_artwork_path(@gallery.id, @room.id, artwork_list.id), class: "link_child" %>
+      </div>
+      <div class="artwork_list_btn link_parent">
+        Delete<%= link_to '', gallery_room_artwork_path(@gallery.id, @room.id, artwork_list.id), method: :delete, class: "link_child" %>
+      </div>
+    <% end %>
+  </div>
+</div>

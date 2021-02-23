@@ -1,0 +1,63 @@
+.edit_room_title {
+  width: 800px;
+  font-size: 25px;
+  border-bottom: lightgray solid 2px;
+  padding: 50px 20px 10px;
+  margin-left: 50px;
+}
+
+.edit_room_artworks {
+  width: 800px;
+  font-size: 20px;
+  padding: 50px 30px 10px;
+  margin-left: 60px;
+  margin-bottom: 20px;
+}
+
+.artwork_list_area {
+  display: flex;
+  overflow: scroll;
+  margin-left: 60px;
+}
+
+.artwork_list_container {
+  /* border: lightgray solid 1px; */
+  margin-left: 30px;
+}
+
+.artwork_list {
+  height: 180px;
+  width: 180px;
+  object-fit: contain;
+  background-color: lightgray;
+}
+
+.artwork_list_btns {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.artwork_list_btn {
+  font-size: 15px;
+  background-color: lightgray;
+  border: #696969 solid 1px;
+  padding: 5px 8px;
+  margin: 10px 15px 10px 0;
+}
+
+.new_artwork_btn {
+  width: 150px;
+  border: #696969 solid 1px;
+  padding: 8px 10px;
+  margin-top: 20px;
+  margin-left: 80px;
+}
+
+.done_btn {
+  margin-top: 40px;
+  margin-left: 100px;
+}
+
+.save_area {
+  display: flex;
+}

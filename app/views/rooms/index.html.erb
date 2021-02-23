@@ -1,16 +1,27 @@
 <%= render partial: 'shared/header' %>
 
-<%= link_to 'Back', gallery_path(@gallery.id) %>
+<div class="back_btn link_parent">
+  ← Back
+  <%= link_to '', gallery_path(@gallery.id), class: "link_child" %>
+</div>
 
-<h2><%= @gallery.title %></h2>
-<h3>Exhibition room</h3>
+<div class="show_gallery_top">
+  <div class="show_gallery_title"><%= @gallery.title %></div>
+  <div class="show_gallery_edit_btns">
+    <% if user_signed_in? && current_user.id == @gallery.user_id %>
+      <div class="edit_room_btn link_parent">
+        Edit room<%= link_to '', edit_gallery_room_path(@gallery.id,@room.id), class: "link_child" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<% if user_signed_in? && current_user.id == @gallery.user_id %>
-  <h3>
-    <%= link_to 'Edit room', edit_gallery_room_path(@gallery.id,@room.id) %>
-  </h3>
-<% end %>
+<div class="exhibition_room_area">
+  <div class="exhibition_room_title">Exhibition room</div>
 
-<div class="exhibition_room">
-  <%= render partial: 'artwork', collection: @artworks %>
+  <div class="exhibition_room_back">
+    <div class="exhibition_room">
+      <%= render partial: 'artwork', collection: @artworks %>
+    </div>
+  </div>
 </div>
