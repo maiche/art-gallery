@@ -2,10 +2,9 @@
 
 <div class="top_area">
   <div class="top_title">Exhibitions</div>
-</div>
-
-<div class="gallery_card_area">
-  <% if @galleries.any? %>
-    <%= render partial: 'gallery', collection: @galleries %>
-  <% end %>
+  <div class="gallery_card_area">
+    <% if @galleries.any? %>
+      <%= render partial: 'gallery', collection: @galleries %>
+    <% end %>
+  </div>
 </div>
