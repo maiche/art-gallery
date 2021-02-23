@@ -9,9 +9,36 @@ img {
   overflow: scroll;
 }
 
+.edit_room_btn {
+  width: 80px;
+  margin: 20px;
+  border: #696969 solid 1px;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.exhibition_room_area {
+  background: linear-gradient(-10deg, #000000, #E4A972);
+}
+
+.exhibition_room_title {
+  font-size: 30px;
+  font-style: italic;
+  color: #FFFFFF;
+  padding: 15px 50px 10px;
+}
+
+.exhibition_room_back {
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  padding: 80px;
+}
+
 .exhibition_room {
-  background-color: #f5f5f5;
+  background-color: #F5F5F5;
   height: 600px;
+  width: 1000px;
   border: lightgray solid 1px;
   position: relative;
 }

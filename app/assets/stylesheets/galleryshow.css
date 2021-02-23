@@ -5,7 +5,7 @@
 
 .show_gallery_title {
   font-size: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .show_gallery_edit_btns{
@@ -28,7 +28,6 @@
 .edit_btn {
   margin: 20px;
   border: #696969 solid 1px;
-  background-color: lightgray;
   padding: 6px 12px;
 }
 

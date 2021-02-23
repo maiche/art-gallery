@@ -19,6 +19,8 @@
 
 <div id="data" data-gallery="<%= @gallery.id %>" data-room="<%= @room.id %>" class="save_message"></div>
 
-<div class="exhibition_room">
-  <%= render partial: 'artwork', collection: @artworks %>
+ <div class="exhibition_room_back">
+  <div class="exhibition_room">
+    <%= render partial: 'artwork', collection: @artworks %>
+  </div>
 </div>
