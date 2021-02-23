@@ -4,8 +4,8 @@
   <div class="top_title">Exhibitions</div>
 </div>
 
-<% if @galleries.any? %>
-  <div class="show_exhibitions">
+<div class="gallery_card_area">
+  <% if @galleries.any? %>
     <%= render partial: 'gallery', collection: @galleries %>
-  </div>
-<% end %>
+  <% end %>
+</div>

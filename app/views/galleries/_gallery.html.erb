@@ -1,14 +1,11 @@
-<%= link_to gallery_path(gallery.id) do %>
-  <div>
+<div class="gallery_card link_parent">
+  <% if gallery.top_image.attached? %>
+    <%= image_tag gallery.top_image, class: "gallery_card_image" %>
+  <% else %>
+      <%= image_tag 'no_image.png', class: "gallery_card_image" %>
+  <% end %>
+  <div class="gallery_card_title">
     <%= gallery.title %>
   </div>
-  <% if gallery.top_image.attached? %>
-    <div>
-      <%= image_tag gallery.top_image %>
-    </div>
-  <% else %>
-    <div>
-      <%= image_tag 'no_image.png' %>
-    </div>
-  <% end %>
-<% end %>
+  <%= link_to '', gallery_path(gallery.id), class: "link_child" %>
+</div>

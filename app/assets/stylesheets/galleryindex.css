@@ -1,12 +1,39 @@
 .top_area {
-  background-color: #494949;
+  background-color: #696969;
   /* background: linear-gradient(-45deg, #E4A972, #9941D8); */
-  padding: 50px 40px 140px;
+  padding: 50px 40px 150px;
 }
 
 .top_title {
   color: #FFFFFF;
   font-size: 40px;
-  /* font-family: 'Vollkorn', serif; */
   font-style: italic;
+}
+
+.gallery_card_area {
+  display: flex;
+  overflow: scroll;
+  background: linear-gradient(180deg, #696969, #c71585);
+}
+
+.gallery_card {
+  height: 200px;
+  width: 250px;
+  border: lightgray solid 1px;
+  margin-left: 60px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  background-color: #F5F5F5;
+}
+
+.gallery_card_image {
+  height: 150px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.gallery_card_title {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
 }
