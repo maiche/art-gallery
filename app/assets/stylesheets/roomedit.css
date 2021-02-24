@@ -6,6 +6,12 @@
   margin-left: 50px;
 }
 
+.edit_room_message {
+  width: 800px;
+  padding: 20px 40px 0;
+  margin-left: 50px;
+}
+
 .edit_room_artworks {
   width: 800px;
   font-size: 20px;
@@ -54,8 +60,8 @@
 }
 
 .done_btn {
-  margin-top: 40px;
-  margin-left: 100px;
+  margin-top: 30px;
+  margin-left: 90px;
 }
 
 .save_area {

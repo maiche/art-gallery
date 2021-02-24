@@ -18,6 +18,8 @@
 
 <div class="edit_room_title">Room preview</div>
 
+<div class="edit_room_message">drag to move</div>
+
 <div class="save_area">
   <%= form_with url: gallery_room_path(@gallery.id, @room.id), method: :put, id: "form" do |form| %>
     <%= form.submit 'done' , id: "position_btn", class: "done_btn" %>
