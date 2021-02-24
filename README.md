@@ -43,6 +43,7 @@
 | caption     | text       | null: false                    |
 | vertical    | integer    |                                |
 | horizontal  | integer    |                                |
+| size        | integer    |                                |
 | room        | references | null: false, foreign_key: true |
 
 - belongs_to :room
