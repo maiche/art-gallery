@@ -57,3 +57,11 @@ img {
 .saved {
   color: red;
 }
+
+.tweet_area {
+  margin-left: 800px;
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  padding: 10px 10px 50px;
+}
