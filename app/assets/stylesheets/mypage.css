@@ -1,0 +1,15 @@
+.mypage_name {
+  width: 800px;
+  font-size: 25px;
+  border-bottom: lightgray solid 2px;
+  padding: 50px 20px 10px;
+  margin-left: 50px;
+}
+
+.mypage_title {
+  width: 800px;
+  font-size: 20px;
+  padding: 50px 30px 10px;
+  margin-left: 60px;
+  margin-bottom: 20px;
+}

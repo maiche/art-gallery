@@ -1,6 +1,10 @@
 <%= render partial: 'shared/header' %>
 
-<h2><%= @user.name %></h2>
-<h3>Profile</h3>
-<h3>Exhibitions</h3>
-<%= render partial: '/galleries/gallery', collection: @galleries %>
+<h2 class="mypage_name"><%= @user.name %></h2>
+<h3 class="mypage_title">Profile</h3>
+<h3 class="mypage_title">Exhibitions</h3>
+<% render partial: '/galleries/gallery', collection: @galleries %>
+
+<div class="gallery_card_area">
+   <%= render partial: '/galleries/gallery', collection: @galleries %>
+</div>
