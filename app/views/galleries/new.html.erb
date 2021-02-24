@@ -1,22 +1,26 @@
 <%= render partial: 'shared/header' %>
 
-<h2>New gallery</h2>
+<div class="edit_form_body">
+  <div class="edit_form">
+  <h2 class="edit_title">New gallery</h2>
 
-<%= form_with(model: @gallery, local: true) do |f| %>
-  <div>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <%= form_with(model: @gallery, local: true) do |f| %>
+    <div>
+      <%= f.label :title, class: "edit_label" %><br />
+      <%= f.text_field :title, class: "edit_input" %>
+    </div>
+    <div>
+      <%= f.label :top_image, class: "edit_label" %><br />
+      <%= f.file_field :top_image, id: 'preview_form', class: "edit_input" %>
+    </div>
+    <div id="preview_display" ></div>
+    <div>
+      <%= f.label :description, class: "edit_label" %><br />
+      <%= f.text_area :description, class: "edit_input" %>
+    </div>
+    <div>
+      <%= f.submit "Submit", class: "submit_btn" %>
+    </div>
+  <% end %>
   </div>
-  <div>
-    <%= f.label :top_image %><br />
-    <%= f.file_field :top_image, id: 'preview_form' %>
-  </div>
-  <div id="preview_display" ></div>
-  <div>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div>
-    <%= f.submit "Submit" %>
-  </div>
-<% end %>
+</div>

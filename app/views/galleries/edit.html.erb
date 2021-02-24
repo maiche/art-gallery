@@ -1,26 +1,35 @@
 <%= render partial: 'shared/header' %>
 
-<%= link_to 'Back', gallery_path(@gallery.id) %>
+<div class="back_btn link_parent">
+  ← Back
+  <%= link_to '', gallery_path(@gallery.id), class: "link_child" %>
+</div>
 
-<h2>Edit gallery</h2>
+<div class="edit_form_body">
+  <div class="edit_form">
+    <h2 class="edit_title">Edit gallery</h2>
 
-<%= form_with(model: @gallery, local: true) do |f| %>
-  <div>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :top_image %><br />
-    <%= f.file_field :top_image, id: 'preview_form' %>
-  </div>
-  <div id="preview_display"></div>
-  <div>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div>
-    <%= f.submit "Submit" %>
-  </div>
-<% end %>
+    <%= form_with(model: @gallery, local: true) do |f| %>
+      <div>
+        <%= f.label :title, class: "edit_label" %><br />
+        <%= f.text_field :title, class: "edit_input" %>
+      </div>
+      <div>
+        <%= f.label :top_image, class: "edit_label" %><br />
+        <%= f.file_field :top_image, id: 'preview_form', class: "edit_input" %>
+      </div>
+      <div id="preview_display"></div>
+      <div>
+        <%= f.label :description, class: "edit_label" %><br />
+        <%= f.text_area :description, class: "edit_input" %>
+      </div>
+      <div>
+        <%= f.submit "Submit", class: "submit_btn" %>
+      </div>
+    <% end %>
 
-<%= link_to 'Edit room', edit_gallery_room_path(@gallery.id, @room.id) %>
+    <div class="move_to_edit_room link_parent">
+      Edit room →<%= link_to '', edit_gallery_room_path(@gallery.id, @room.id), class: "link_child" %>
+    </div>
+  </div>
+</div>

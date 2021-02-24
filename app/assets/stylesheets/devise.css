@@ -1,5 +1,5 @@
 .devise_body {
-  height: calc(100vh - 70px);
+  height: 100vh;
   background: linear-gradient(-135deg, #E4A972, #9941D8);
   display: flex;
   justify-content: center;
