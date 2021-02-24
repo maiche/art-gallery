@@ -13,7 +13,7 @@
         Edit<%= link_to '', edit_gallery_path(@gallery.id), class: "link_child" %>
       </div>
       <div class="edit_btn link_parent">
-        Delete<%= link_to '', gallery_path(@gallery.id), method: :delete, class: "link_child" %>
+        Delete<%= link_to '', gallery_path(@gallery.id), method: :delete, class: "link_child", data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
   </div>

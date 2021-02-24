@@ -6,7 +6,7 @@
         Edit<%= link_to '', edit_gallery_room_artwork_path(@gallery.id, @room.id, artwork_list.id), class: "link_child" %>
       </div>
       <div class="artwork_list_btn link_parent">
-        Delete<%= link_to '', gallery_room_artwork_path(@gallery.id, @room.id, artwork_list.id), method: :delete, class: "link_child" %>
+        Delete<%= link_to '', gallery_room_artwork_path(@gallery.id, @room.id, artwork_list.id), method: :delete, class: "link_child", data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
   </div>
