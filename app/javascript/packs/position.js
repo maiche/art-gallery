@@ -24,6 +24,23 @@ document.addEventListener('DOMContentLoaded', function(){
       artwork.addEventListener('mouseup', () => {
         document.removeEventListener("mousemove",onMouseMove);
       });
+
+      const onTouchMove = function(e){
+        let RoomRect = ExhibitionRoom.getBoundingClientRect();
+        let x = e.changedTouches[0].clientX;
+        let y = e.changedTouches[0].clientY;
+        let height = artwork.offsetHeight;
+        let width = artwork.offsetWidth;
+        artwork.style.top = (y-RoomRect.top-height/2) + "px";
+        artwork.style.left = (x-RoomRect.left-width/2) + "px";
+      }
+      artwork.addEventListener('touchstart', (e) => {
+        document.addEventListener('touchmove',onTouchMove);
+      });
+      artwork.addEventListener('touchend', () => {
+        document.removeEventListener("touchmove",onTouchMove);
+      });
+
     }
   });
   const PositionBtn = document.getElementById('position_btn');
