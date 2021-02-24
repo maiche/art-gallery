@@ -1,28 +1,35 @@
 <%= render partial: 'shared/header' %>
 
-<%= link_to 'Back', edit_gallery_room_path(params[:gallery_id],params[:room_id]) %>
+<div class="back_btn link_parent">
+  ← Back
+  <%= link_to '', edit_gallery_room_path(params[:gallery_id],params[:room_id]), class: "link_child" %>
+</div>
 
-<h2>Edit artwork</h2>
+<div class="edit_form_body">
+  <div class="edit_form">
+    <h2 class="edit_title">Edit artwork</h2>
 
-<%= form_with(model: @artwork, url: gallery_room_artwork_path(params[:gallery_id], params[:room_id]),local: true) do |f| %>
-  <div>
-    <%= f.label :image %><br />
-    <%= f.file_field :image, id: 'preview_form' %>
+    <%= form_with(model: @artwork, url: gallery_room_artwork_path(params[:gallery_id], params[:room_id]),local: true) do |f| %>
+      <div>
+        <%= f.label :image, class: "edit_label" %><br />
+        <%= f.file_field :image, id: 'preview_form', class: "edit_input" %>
+      </div>
+      <div id="preview_display"></div>
+      <div>
+        <%= f.label :caption, class: "edit_label" %><br />
+        <%= f.text_area :caption, class: "edit_input" %>
+      </div>
+      <div>
+        <%= f.label :vertical, class: "edit_label" %><br />
+        <%= f.text_field :vertical, class: "edit_input" %>
+      </div>
+      <div>
+        <%= f.label :horizontal, class: "edit_label" %><br />
+        <%= f.text_field :horizontal, class: "edit_input" %>
+      </div>
+      <div>
+        <%= f.submit "Submit", class: "submit_btn" %>
+      </div>
+    <% end %>
   </div>
-  <div id="preview_display"></div>
-  <div>
-    <%= f.label :caption %><br />
-    <%= f.text_area :caption %>
-  </div>
-  <div>
-    <%= f.label :vertical %><br />
-    <%= f.text_field :vertical %>
-  </div>
-  <div>
-    <%= f.label :horizontal %><br />
-    <%= f.text_field :horizontal %>
-  </div>
-  <div>
-    <%= f.submit "Submit" %>
-  </div>
-<% end %>
+</div>
