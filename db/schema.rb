@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_02_18_115908) do
     t.text "caption", null: false
     t.integer "vertical"
     t.integer "horizontal"
+    t.integer "size"
     t.bigint "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
