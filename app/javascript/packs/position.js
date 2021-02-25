@@ -73,10 +73,10 @@ document.addEventListener('DOMContentLoaded', function(){
           alert(`Error ${XHR.status}: ${XHR.statusText}`);
           return null;
         }
-        const item = XHR.response.artwork;
-        artwork.style.top = item.vertical + "px"
-        artwork.style.left = item.horizontal + "px"
-        console.log(artwork.style.height);
+        // const item = XHR.response.artwork;
+        // artwork.style.top = item.vertical + "px"
+        // artwork.style.left = item.horizontal + "px"
+        // console.log(artwork.style.height);
       };
     });
     // console.log(Data);
