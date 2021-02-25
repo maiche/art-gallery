@@ -35,9 +35,11 @@ document.addEventListener('DOMContentLoaded', function(){
         artwork.style.left = (x-RoomRect.left-width/2) + "px";
       }
       artwork.addEventListener('touchstart', (e) => {
+        e.preventDefault();
         document.addEventListener('touchmove',onTouchMove);
       });
-      artwork.addEventListener('touchend', () => {
+      artwork.addEventListener('touchend', (e) => {
+        e.preventDefault();
         document.removeEventListener("touchmove",onTouchMove);
       });
 

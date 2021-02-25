@@ -22,20 +22,21 @@ document.addEventListener('DOMContentLoaded', function(){
       artworkSize = parseInt(artwork.offsetHeight);
     });
 
-    // const onTouchMove = function(e){
-    //   let RoomRect = ExhibitionRoom.getBoundingClientRect();
-    //   let x = e.changedTouches[0].clientX;
-    //   let y = e.changedTouches[0].clientY;
-    //   let height = artwork.offsetHeight;
-    //   let width = artwork.offsetWidth;
-    //   artwork.style.top = (y-RoomRect.top-height/2) + "px";
-    //   artwork.style.left = (x-RoomRect.left-width/2) + "px";
-    // }
-    // artwork.addEventListener('touchstart', (e) => {
-    //   document.addEventListener('touchmove',onTouchMove);
-    // });
-    // artwork.addEventListener('touchend', () => {
-    //   document.removeEventListener("touchmove",onTouchMove);
-    // });
+    const onTouchMove = function(e){
+      e.stopPropagation();
+      let Rect = artwork.getBoundingClientRect();
+      let y = e.changedTouches[0].clientY;
+      artwork.style.height = (artworkSize-y+Rect.top) + "px";
+      artwork.style.width = artwork.style.height;
+    }
+    sizebtn.addEventListener('touchstart', (e) => {
+      e.stopPropagation();
+      document.addEventListener('touchmove',onTouchMove);
+    });
+    document.addEventListener('touchend', (e) => {
+      e.stopPropagation();
+      document.removeEventListener("touchmove",onTouchMove);
+      artworkSize = parseInt(artwork.offsetHeight);
+    });
   });
 });
