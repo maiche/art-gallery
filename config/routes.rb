@@ -6,5 +6,5 @@ Rails.application.routes.draw do
       resources :artworks, only: [:new, :create, :edit, :update, :destroy]
     end
   end
-  resources :users, only: :show
+  resources :users, only: [:edit, :update, :show]
 end
