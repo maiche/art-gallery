@@ -2,6 +2,12 @@
 
 <h2 class="mypage_name"><%= @user.name %></h2>
 <h3 class="mypage_title">Profile</h3>
+<% if user_signed_in? && current_user.id == @user.id %>
+   <div class="mypage_edit_btn link_parent">
+      Edit<%= link_to '', edit_user_path, class: "link_child" %>
+   </div>
+<% end %>
+<div class="mypage_profile"><%= @user.profile %></div>
 <h3 class="mypage_title">Exhibitions</h3>
 <% render partial: '/galleries/gallery', collection: @galleries %>
 
