@@ -1,3 +1,6 @@
 <div class="artwork_container" style="top: <%= artwork.vertical %>px; left: <%= artwork.horizontal %>px;" data-id="<%= artwork.id %>">
-  <%= image_tag artwork.image, class: "artwork", style: "height: #{artwork.size}px; width: #{artwork.size}px;" %>
+  <%= image_tag artwork.image, class: "artwork", style: "height: #{artwork.size}px; width: #{artwork.size}px;", id: "#{artwork.id}" %>
+  <% if current_page?(edit_gallery_room_path(@gallery.id, @room.id)) %>
+    <div class="size_btn" data-id="<%= artwork.id %>"></div>
+  <% end %>
 </div>

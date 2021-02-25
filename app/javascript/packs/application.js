@@ -11,6 +11,7 @@ require('jquery')
 
 require('./preview')
 require('./position')
+require('./size')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
