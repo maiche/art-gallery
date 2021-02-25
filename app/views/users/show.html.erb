@@ -2,6 +2,10 @@
 
 <h2 class="mypage_name"><%= @user.name %></h2>
 <h3 class="mypage_title">Profile</h3>
+<div class="mypage_edit_btn link_parent">
+   Edit<%= link_to '', '#', class: "link_child" %>
+</div>
+<div><%= @user.profile %></div>
 <h3 class="mypage_title">Exhibitions</h3>
 <% render partial: '/galleries/gallery', collection: @galleries %>
 
