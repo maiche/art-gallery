@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
 
   def update
     artwork = Artwork.find(params[:artwork_id])
-    artwork.update(vertical: params[:vertical], horizontal: params[:horizontal])
+    artwork.update(vertical: params[:vertical], horizontal: params[:horizontal], size: params[:size])
     render json:{ artwork: artwork }
   end
 end

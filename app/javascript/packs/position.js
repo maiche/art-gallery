@@ -51,15 +51,19 @@ document.addEventListener('DOMContentLoaded', function(){
       console.log(artworkId);
       const artworkVertical = parseInt(artwork.style.top);
       const artworkHorizontal = parseInt(artwork.style.left);
+      const artworkImage = document.getElementById(`${artworkId}`);
+      const artworkSize = parseInt(artworkImage.style.height);
       console.log(artworkVertical);
       console.log(artworkHorizontal);
+      console.log(artworkSize);
       const formData = new FormData(document.getElementById("form"));
       for (let value of formData.entries()) { 
-        console.log(value); 
+        // console.log(value); 
       }
       formData.set('artwork_id', artworkId);
       formData.set('vertical', artworkVertical);
       formData.set('horizontal', artworkHorizontal);
+      formData.set('size', artworkSize);
       const XHR = new XMLHttpRequest();
       XHR.open("PUT", `/galleries/${galleryId}/rooms/${roomId}`, true);
       XHR.responseType = "json";
@@ -72,9 +76,10 @@ document.addEventListener('DOMContentLoaded', function(){
         const item = XHR.response.artwork;
         artwork.style.top = item.vertical + "px"
         artwork.style.left = item.horizontal + "px"
+        console.log(artwork.style.height);
       };
     });
-    console.log(Data);
+    // console.log(Data);
     Data.classList.add('saved');
     Data.textContent = 'saved';
     setTimeout(function() {
