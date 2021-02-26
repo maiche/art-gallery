@@ -27,7 +27,7 @@ class GalleriesController < ApplicationController
 
   def update
     if @gallery.update(gallery_params)
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render :edit
     end
