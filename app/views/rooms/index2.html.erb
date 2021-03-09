@@ -1,0 +1,35 @@
+<%= render partial: 'shared/header' %>
+
+<div class="back_btn link_parent">
+  ← Back
+  <%= link_to '', gallery_path(@gallery.id), class: "link_child" %>
+</div>
+
+<div class="show_gallery_top">
+  <div class="show_gallery_title"><%= @gallery.title %></div>
+  <div class="show_gallery_edit_btns">
+    <% if user_signed_in? && current_user.id == @gallery.user_id %>
+      <div class="edit_room_btn link_parent">
+        Edit room<%= link_to '', edit_gallery_room_path(@gallery.id,@room.id), class: "link_child" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="exhibition_room_area">
+  <div class="exhibition_room_title">Exhibition room</div>
+
+  <div class="exhibition_room_back">
+    <div class="exhibition_room">
+      <%= render partial: 'artwork', collection: @artworks %>
+    </div>
+  </div>
+</div>
+
+<div class="tweet_area">
+  <div>Share on Twitter</div>
+  <div>
+    <%= link_to 'Tweet', "http://twitter.com/share?url=#{request.url}&text=#{@gallery.user.name}さんの展示です&hashtags=ArtGallery", class: "twitter-share-button" %>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </div>
+</div>

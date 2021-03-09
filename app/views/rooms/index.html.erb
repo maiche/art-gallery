@@ -1,35 +1,15 @@
-<%= render partial: 'shared/header' %>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<%# <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
+<script src="html2canvas.min.js"></script> %>
 
-<div class="back_btn link_parent">
-  ← Back
-  <%= link_to '', gallery_path(@gallery.id), class: "link_child" %>
-</div>
+<a-scene>
+  <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+  <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+  <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+  <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane>
 
-<div class="show_gallery_top">
-  <div class="show_gallery_title"><%= @gallery.title %></div>
-  <div class="show_gallery_edit_btns">
-    <% if user_signed_in? && current_user.id == @gallery.user_id %>
-      <div class="edit_room_btn link_parent">
-        Edit room<%= link_to '', edit_gallery_room_path(@gallery.id,@room.id), class: "link_child" %>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<div class="exhibition_room_area">
-  <div class="exhibition_room_title">Exhibition room</div>
-
-  <div class="exhibition_room_back">
-    <div class="exhibition_room">
-      <%= render partial: 'artwork', collection: @artworks %>
-    </div>
-  </div>
-</div>
-
-<div class="tweet_area">
-  <div>Share on Twitter</div>
-  <div>
-    <%= link_to 'Tweet', "http://twitter.com/share?url=#{request.url}&text=#{@gallery.user.name}さんの展示です&hashtags=ArtGallery", class: "twitter-share-button" %>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  </div>
-</div>
+  <a-assets>
+    <%= image_tag 'no_image.png', class: "gallery_card_image", id: "sky" %>
+  </a-assets>
+  <a-sky src="#sky"></a-sky>
+</a-scene>
