@@ -5,7 +5,7 @@
 
   <% @artworks.each do |artwork| %>
     <a-assets>
-      <%= image_tag artwork.image, class: "gallery_card_image", id: "artwork#{artwork.id}" %>
+      <%= image_tag artwork.image.blob.service_url, class: "gallery_card_image", id: "artwork#{artwork.id}", crossorigin: "anonymous" %>
     </a-assets>
     <a-image src="#artwork<%= artwork.id %>" position="<%= artwork.horizontal/50-5 %> <%= -artwork.vertical/50+10 %> -20" rotation="0 0 0" width="<%= artwork.size*0.03 %>" height="<%= artwork.size*0.03 %>"></a-image>
   <% end %>

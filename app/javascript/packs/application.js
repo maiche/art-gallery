@@ -13,7 +13,6 @@ require('./preview')
 require('./position')
 require('./size')
 require('./html2canvas.min')
-require('./storageblob')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
