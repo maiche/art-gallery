@@ -4,7 +4,7 @@
 クリエイターが作品を投稿してWeb上で気軽に展覧会を開催できるアプリケーションです。<br>
 投稿された作品はVR空間に展示され、オンラインでありながら臨場感のある展示を楽しむことができます。
 
-[![Image from Gyazo](https://i.gyazo.com/4b0a6141cf81251812b0f3b87c2cff1c.gif)](https://gyazo.com/4b0a6141cf81251812b0f3b87c2cff1c)
+[![Image from Gyazo](https://i.gyazo.com/6fca38d1fa092b5e49ede0d46a4886fa.gif)](https://gyazo.com/6fca38d1fa092b5e49ede0d46a4886fa)
 
 # 🌐 App URL
 ### **https://art-gallery-space.herokuapp.com/**
@@ -49,7 +49,7 @@ password: testpass
 
 [![Image from Gyazo](https://i.gyazo.com/2ca60d79884a7e7880a8f426d2648546.jpg)](https://gyazo.com/2ca60d79884a7e7880a8f426d2648546)
 
-[![Image from Gyazo](https://i.gyazo.com/4b0a6141cf81251812b0f3b87c2cff1c.gif)](https://gyazo.com/4b0a6141cf81251812b0f3b87c2cff1c)
+[![Image from Gyazo](https://i.gyazo.com/6fca38d1fa092b5e49ede0d46a4886fa.gif)](https://gyazo.com/6fca38d1fa092b5e49ede0d46a4886fa)
 
 # テーブル設計
 
