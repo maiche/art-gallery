@@ -133,29 +133,18 @@ password: testpass<br><br>
 
 # ローカルでの動作方法
 
-- 動作環境
-<br><br>
-RUby 2.6.5
-<br>
-Ruby on rails 6.0.0
-<br>
-mysql2 0.4.4
-<br><br>
-- 以下のコマンドを実行
-<br><br>
-$ git clone https://github.com/maiche/art-gallery.git
-<br>
-$ cd art-gallery
-<br>
-$ bundle install
-<br>
-$ yarn install
-<br>
-$ rails db:create
-<br>
-$ rails db:migrate
-<br>
-$ rails s
-<br><br>
+#### 動作環境
+Ruby 2.6.5<br>
+Ruby on Rails 6.0.0<br>
+mysql2 0.4.4<br><br>
 
-- http://localhost:3000 にアクセス
+以下のコマンドを実行<br><br>
+$ git clone https://github.com/maiche/art-gallery.git<br>
+$ cd art-gallery<br>
+$ bundle install<br>
+$ yarn install<br>
+$ rails db:create<br>
+$ rails db:migrate<br>
+$ rails s<br><br>
+
+http://localhost:3000 にアクセス
