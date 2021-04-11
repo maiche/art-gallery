@@ -7,7 +7,9 @@
 
 <div class="show_gallery_top">
   <div class="show_gallery_title"><%= @gallery.title %></div>
-  <div >by <%= @gallery.user.name %></div>
+  <div class="link_parent">
+    by <%= @gallery.user.name %><%= link_to '', user_path(@gallery.user), class: "link_child" %>
+  </div>
   <div class="show_gallery_edit_btns">
     <% if user_signed_in? && current_user.id == @gallery.user_id %>
       <div class="edit_btn link_parent">
